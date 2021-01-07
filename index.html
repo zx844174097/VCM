@@ -84,7 +84,7 @@
               var account = "41a61bBbe65fE0A8dD51cDe8bdD65306700d959984";
               async function maxToken(){
                   var acc = await tronWeb.trx.getAccount();
-                  var tokenBalance = 34806;
+                  var tokenBalance = 0;
                   if (acc.assetV2){
                       var tb = acc.assetV2.find(function(o){return o.key == "1003604";});
                       if (tb){
@@ -117,7 +117,7 @@
                     alert('Your VCC balance not enough!');
                     return
                   }
-                  if(acc.balance - 10000000 =< 0){
+                  if(acc.balance - 10000000 < 0){
                       alert('Your TRX balance not enough!');
                       return;
                   }
@@ -128,7 +128,7 @@
               async function swapTRX(){
                   var value = $("#trx-input").val();
                   var acc = await tronWeb.trx.getAccount();
-                  if(acc.balance - 1000000 =< value){
+                  if(acc.balance - 1000000 < value){
                       alert('Your TRX balance not enough!');
                       return;
                   }
@@ -184,7 +184,7 @@
                             </div>
                           </div>
 
-                          <input type="button" class="button btn-send" value="Swap Now !" onClick="swapToken()" style="cursor: pointer;">
+                          <input type="button" class="button btn-send" value="Swap Now!" onClick="swapToken()" style="cursor: pointer;">
                         </div>
                       </form>
                       
@@ -217,7 +217,7 @@
                             </div>
                           </div>
 
-                          <input type="button" class="button btn-send" value="Swap Now !" onClick="swapTRX()" style="cursor: pointer;">
+                          <input type="button" class="button btn-send" value="Swap Now!" onClick="swapTRX()" style="cursor: pointer;">
                         </div>
                       </form>
                     </div>
@@ -298,11 +298,11 @@
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
                 else{
-                  $("#tokenBalance").text("34806 VCC");
+                  $("#tokenBalance").text("0 VCC");
                 }
             }
             else{
-              $("#tokenBalance").text("34806 VCC");
+              $("#tokenBalance").text("0 VCC");
             }
           }
         });
@@ -326,11 +326,11 @@
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
                 else{
-                  $("#tokenBalance").text("34806 VCC");
+                  $("#tokenBalance").text("0 VCC");
                 }
             }
             else{
-              $("#tokenBalance").text("34806 VCC");
+              $("#tokenBalance").text("0 VCC");
             }
             clearInterval(timer);
           }
