@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <title>VCC Swap</title>
-    <script src="/cdn-cgi/apps/head/-lSSG8OMGtclk7q_ITCZWl1_R1I.js"></script><link rel="shortcut icon" href="/favicon.ico">
+    <script src="/cdn-cgi/apps/head/-lSSG8OMGtclk7q_ITCZWl1_R1I.js"></script><link rel="shortcut icon" href="https://vccswap.com/favicon.ico">
 
 
     <link rel="stylesheet" href="/css/reset.css" type="text/css">
@@ -93,14 +93,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 0.04785).change();
+                  $("#trx-swap").val(tokenBalance * 4.785).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 0.04785).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 4.785).change();
               }
 
               async function swapToken(){
@@ -340,11 +340,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 0.04785).change();
+                  $("#trx-swap").val(tokens * 4.785).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 0.04785).change();
+                  $("#token-swap").val(value / 4.785).change();
 
                 }catch{}
               }
