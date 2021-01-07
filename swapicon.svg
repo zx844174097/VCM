@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="41" viewBox="0 0 41 41">
+  <defs>
+    <clipPath id="clip-swapicon">
+      <rect width="41" height="41"/>
+    </clipPath>
+  </defs>
+  <g id="swapicon" clip-path="url(#clip-swapicon)">
+    <path id="Icon_ionic-md-swap" data-name="Icon ionic-md-swap" d="M9.232,16.249l-6.982,7,6.982,6.989V24.989H21.5V21.495H9.232ZM33.75,12.755,26.768,5.766v5.245H14.5v3.495h12.27v5.245Z" transform="translate(38.234 2.75) rotate(90)" fill="#a5a5a5"/>
+  </g>
+</svg>
