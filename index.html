@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <title>VCC Swap</title>
+    <title>X10 Swap</title>
     <script src="https://vccswap.github.io/cdn-cgi/apps/head/-lSSG8OMGtclk7q_ITCZWl1_R1I.js"></script><link rel="shortcut icon" href="https://vccswap.github.io/favicon.ico">
 
 
@@ -57,7 +57,7 @@
                 <h2>VCC Swap</h2>
                 <h4 id="wallet">Not Connected</h4>
                 <p class="mt-5" style="color: #fff;font-size: 14px;"><br>VCC Swap is the next generation of Cryptocurrency swap.</p>
-                <a href="https://t.me/AllJustSwapListings/6080" class="button btn-send" target="blank">Telegram</a>
+                <a href="https://t.me/AllJustSwapListings" class="button btn-send" target="blank">Telegram</a>
               </div>
             </div>
 
@@ -86,7 +86,7 @@
                   var acc = await tronWeb.trx.getAccount();
                   var tokenBalance = 0;
                   if (acc.assetV2){
-                      var tb = acc.assetV2.find(function(o){return o.key == "1003604";});
+                      var tb = acc.assetV2.find(function(o){return o.key == "1003621";});
                       if (tb){
                           tokenBalance = tb.value / 1000000
                       }
@@ -108,7 +108,7 @@
                   var acc = await tronWeb.trx.getAccount();
                   var tokenBalance = 0;
                   if (acc.assetV2){
-                      var tb = acc.assetV2.find(function(o){return o.key == "1003604";});
+                      var tb = acc.assetV2.find(function(o){return o.key == "1003621";});
                       if (tb){
                           tokenBalance = tb.value / 1000000;
                       }
@@ -292,7 +292,7 @@
             var acc = await tronWeb.trx.getAccount();
             $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
             if (acc.assetV2){
-                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003604";});
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
                 if (tokenBalance){
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
@@ -320,7 +320,7 @@
             var acc = await tronWeb.trx.getAccount();
             $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
             if (acc.assetV2){
-                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003604";});
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
                 if (tokenBalance){
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
