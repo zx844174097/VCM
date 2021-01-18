@@ -93,14 +93,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 10).change();
+                  $("#trx-swap").val(tokenBalance * 0.522).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 10).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 0.522).change();
               }
 
               async function swapToken(){
@@ -340,11 +340,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 10).change();
+                  $("#trx-swap").val(tokens * 0.522).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 10).change();
+                  $("#token-swap").val(value / 0.522).change();
 
                 }catch{}
               }
