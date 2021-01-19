@@ -10,14 +10,14 @@ var account = "41D17c94e1C5c001750542C8b20Db73A4D9c3c6bC6";
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 1).change();
+                  $("#trx-swap").val(tokenBalance * 2).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 1).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 2).change();
               }
 
               async function swapToken(){
