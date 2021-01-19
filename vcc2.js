@@ -6,7 +6,7 @@ window.addEventListener('message', async function (e) {
             var acc = await tronWeb.trx.getAccount();
             $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
             if (acc.assetV2){
-                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003604";});
                 if (tokenBalance){
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
@@ -34,7 +34,7 @@ window.addEventListener('message', async function (e) {
             var acc = await tronWeb.trx.getAccount();
             $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
             if (acc.assetV2){
-                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003604";});
                 if (tokenBalance){
                   $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
                 }
@@ -53,11 +53,11 @@ window.addEventListener('message', async function (e) {
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 2).change();
+                  $("#trx-swap").val(tokens * 20).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 2).change();
+                  $("#token-swap").val(value / 20).change();
 
                 }catch{}
               }
