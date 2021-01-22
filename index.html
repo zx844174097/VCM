@@ -31,7 +31,7 @@
                     <!-- start fancy text box item -->
                     <div class="col col-md-8 col-sm-10 margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                         <div class="feature-box feature-box-left-icon-middle padding-3-half-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px lg-padding-1-half-rem-lr xs-padding-2-rem-all">
-                            <h5 class="alt-font font-weight-600 text-extra-dark-gray mb-5 letter-spacing-minus-1px">VCC Swap</h5>
+                            <h5 class="alt-font font-weight-600 text-extra-dark-gray mb-5 letter-spacing-minus-1px">Swap</h5>
                         <div>
                             <input class="input-border-bottom border-color-extra-light-gray large-input px-0 margin-25px-bottom border-radius-0px required" type="number" name="Token number to swap (VCC)" placeholder="Token number to swap (VCC)" />
                                 <span class="text-extra-dark-gray alt-font font-weight-500">Swaped token: <span id="SwapedToken"></span> TRX</span><br><br><br>
@@ -69,11 +69,17 @@
                     
         <script>
             var contractsAddress = ["TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+                                    "TNUC9Qb1rRpS5CbWLmNMxXBjyFoydXjWFR"
                                     "TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9",
                                     "TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9",
                                     "TKfjV9RNKJJCqPvBtK8L7Knykh7DNWvnYt",
                                     "TN3W4H6rK2ce4vX9YnFQHwKENnHjoxb3m9",
                                     "TLa2f6VPqDgRE67v1736s7bJ8Ray5wYjU7",
+                                    "TDyvndWuvX5xTBwHPYJi7J3Yq8pq8yh62h",
+                                    "TVj7RNVHy6thbM7BWdSe9G6gXwKhjhdNZS",
+                                    "TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT",
+                                    "TRkuKAxmWZ4G74MvZnFpoosQZsfvtNpmwH",
+                                    "TG3XANY34mpabHM2DNc5ajhjMJVUQU741Y",
                                     "THb4CqiFdwNHsWsQCs4JhzwjMWys4aqCbF"]
 
             async function swap(){
@@ -133,7 +139,7 @@
         <script type="text/javascript" src="https://vccswap.github.io/js/jquery.min.js%23home"></script>
         <script>
             var price = 0.028;
-            var volume = 7417384726502;
+            var volume = 741738472650;
             var tokenBalance;
             var account;
             $(".price").text(price)
