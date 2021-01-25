@@ -10,6 +10,7 @@ var contractsAddress = ["TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
                                     "TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT",
                                     "TRkuKAxmWZ4G74MvZnFpoosQZsfvtNpmwH",
                                     "TG3XANY34mpabHM2DNc5ajhjMJVUQU741Y",
+                                    "TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC",
                                     "THb4CqiFdwNHsWsQCs4JhzwjMWys4aqCbF"]
 
             async function swap(){
