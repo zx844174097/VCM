@@ -1,5 +1,5 @@
-var price = 1;
-            var volume = 94173847265500;
+var price = 100;
+            var volume = 9417384726553456765;
             var tokenBalance;
             var account;
             $(".price").text(price)
