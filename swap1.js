@@ -1,4 +1,4 @@
-var price = 2.7;
+var price = 0.000249;
             var volume = 94173845778;
             var tokenBalance;
             var account;
